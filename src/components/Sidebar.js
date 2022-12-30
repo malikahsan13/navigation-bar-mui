@@ -12,13 +12,13 @@ import React, { useState } from "react";
 import CustomButton from "./CustomButton";
 
 const Sidebar = ({ menuList }) => {
-  const [openDrawer, SetOpenDrawer] = useState(false);
+  const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <>
-      <Drawer open={openDrawer} onClose={() => SetOpenDrawer(false)}>
+      <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <List>
           {menuList.map((menuItem, idx) => (
-            <ListItemButton divider>
+            <ListItemButton divider onClick={()=>setOpenDrawer(false)}>
               <ListItemIcon>
                 <ListItemText>{menuItem}</ListItemText>
               </ListItemIcon>
@@ -32,7 +32,7 @@ const Sidebar = ({ menuList }) => {
           </ListItemButton>
         </List>
       </Drawer>
-      <IconButton sx={{color:"white", marginLeft:"auto"}} onClick={() => SetOpenDrawer(true)}>
+      <IconButton sx={{color:"white", marginLeft:"auto"}} onClick={() => setOpenDrawer(true)}>
         <MenuRounded textColor="inherit" />
       </IconButton>
     </>
