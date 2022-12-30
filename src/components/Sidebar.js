@@ -16,7 +16,7 @@ const Sidebar = ({ menuList }) => {
   return (
     <>
       <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
-        <List>
+        <List sx={{background:"#2596be"}}>
           {menuList.map((menuItem, idx) => (
             <ListItemButton divider onClick={()=>setOpenDrawer(false)}>
               <ListItemIcon>
